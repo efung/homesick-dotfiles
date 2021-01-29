@@ -1,0 +1,55 @@
+[user]
+	name = Eric Fung
+	email = eric.fung@shopify.com
+[core]
+	editor = vim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+	commitGraph = true
+[color]
+	ui = true
+[alias]
+    ann = blame
+    ap = add --patch
+	ci = commit
+	co = checkout
+	di = diff
+	dis = diff --staged
+    pf = push --force-with-lease
+	st = status
+    smi = submodule init --recursive
+    smu = submodule update --recursive
+	unstage = reset HEAD
+[push]
+	default = simple
+[diff]
+	noprefix = true
+	compactionHeuristic = true
+	algorithm = patience
+[hub]
+	protocol = https
+[fetch]
+	prune = true
+[color "diff-so-fancy"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff-so-fancy]
+	stripLeadingSymbols = false
+	markEmptyLines = false
+[stash]
+	showPatch = true
+[protocol]
+	version = 2
+[pull]
+	ff = only
+[gc]
+	writeCommitGraph = true
+[url "https://github.com/Shopify/"]
+	insteadOf = git@github.com:Shopify/
+	insteadOf = git@github.com:shopify/
+	insteadOf = ssh://git@github.com/Shopify/
+	insteadOf = ssh://git@github.com/shopify/
+[credential]
+	helper = 
+	helper = store --file /opt/dev/var/private/git_credential_store
