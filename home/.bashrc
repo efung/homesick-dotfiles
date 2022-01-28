@@ -5,7 +5,7 @@ export EDITOR=/usr/bin/vim
 
 export LESSCHARSET=utf-8
 
-export PATH="${PATH}:~/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin"
+export PATH="${PATH}:~/bin:/opt/homebrew/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin"
 
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -49,6 +49,12 @@ if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
   source /opt/dev/dev.sh
 fi
 
-# Homeshick
-export HOMESHICK_DIR=/usr/local/opt/homeshick
-source "/usr/local/opt/homeshick/homeshick.sh"
+export RIPGREP_CONFIG_PATH=${HOME}/.ripgreprc
+
+# Homeshick (via brew install)
+export HOMESHICK_DIR=/opt/homebrew/opt/homeshick
+source "/opt/homebrew/opt/homeshick/homeshick.sh"
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
